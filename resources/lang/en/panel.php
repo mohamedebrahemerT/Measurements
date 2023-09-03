@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'site_title' => 'المقاييس ',
+    'You are logged in!'=>'لقد سجلت الدخول!',
+    'Dashboard'=>'لوحة القيادة',
+    'Start Test'=>'ابدأ الاختبار',
+    'Results of your test'=>'نتائج الاختبار الخاص بك',
+    'Start test again'=>'ابدأ الاختبار مرة أخرى',
+    'Total points'=>'مجمل النقاط',
+    'points'=>'نقطة ',
+    'GET DETAILS IN PDF BY EMAIL'=>'احصل على التفاصيل بصيغة PDF عبر البريد الإلكتروني',
+    'Your test result has been sent successfully!'=>'لقد تم إرسال نتيجة الاختبار بنجاح!' ,
+    'Question Text'=>'نص السؤال',
+    'Test No'=>'رقم الاختبار',
+    'Points'=>'نقاط',
+    'Your Test Results'=>'نتائج الاختبار الخاصة بك',
+    'Your test results are attached to this message'=>'نتائج الاختبار الخاصة بك مرفقة بهذه الرسالة',
+    'Start test again'=>'ابدأ الاختبار مرة أخرى',
+    'Submit'=>'حفظ  ',
+    'Password'=>'كلمة المرور',
+    'Change password'=>'تغيير كلمة المرور',
+    'Confirm Password'=>'تأكيد كلمة المرور',
+    'Logout'=>'تسجيل خروج',
+];
