@@ -23,8 +23,8 @@
                             </div>
                         </div>
                     @endif
-   <img src="{{url('/')}}/images/logo.png" style="  width: 100px;
-  height: 100px;
+   <img src="{{url('/')}}/images/logo.png" style="  width: 200px;
+  height: 200px;
 ">
 <br>
 {{ $result->Measure->name }}
