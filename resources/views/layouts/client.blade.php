@@ -29,17 +29,27 @@
   margin-bottom: 0;
   margin-right: 4%;
 }
+.navbar-light .navbar-nav .nav-link
+{
+    color: #fff !important;
+}
 </style>
 </head>
 
 <body style="text-align: right;direction: rtl;
 font-family: 'Cairo', sans-serif !important;
 padding: 5px;
+font-size: 16px;
+font-weight: bold;
+
  ">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style=" background: rgb(75,79,240);
+background: linear-gradient(90deg, rgba(75,79,240,1) 18%, rgba(255,197,77,1) 32%, rgba(249,81,80,1) 48%); ">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a style="font-size: 20px;
+font-weight: bold;
+color: #fff !important;" class="navbar-brand" href="{{ url('/') }}">
                     {{ trans('panel.site_title') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -59,9 +69,7 @@ padding: 5px;
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('client.test') }}">
-                                     
-
+          <a class="nav-link" href="{{ route('client.select_Measurement') }}">                                
   {{ trans('panel.Start Test') }}
                                 </a>
                             </li>
@@ -69,14 +77,14 @@ padding: 5px;
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" >
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item" style="text-align: right;">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if(Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item" style="text-align: right;">
                                     <a class="nav-link" href="{{ route('register') }}"> 
   {{ trans('panel.Register') }}
                                     </a>
@@ -90,7 +98,7 @@ padding: 5px;
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('client.password.create') }}">
-                                        {{ trans('panel.Change password') }}
+                                        حسابي 
 
 
                                     </a>
@@ -117,6 +125,20 @@ padding: 5px;
             @yield('content')
         </main>
     </div>
+
+       <script>
+        function printDiv2(divName){
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+
+        }
+    </script>
 </body>
 
 </html>

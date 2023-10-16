@@ -68,6 +68,23 @@ return [
     'category'       => [
         'title'          => 'الفئات',
         'title_singular' => 'فئة',
+        'Measurement_id'=>'المقياس ',
+        'fields'         => [
+            'id'                => ' المعرف ',
+            'id_helper'         => '',
+            'name'              => 'الاسم ',
+            'name_helper'       => '',
+            'created_at'        => ' أنشئت في',
+            'created_at_helper' => '',
+            'updated_at'        => 'تم التحديث في',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'تم الحذف عند',
+            'deleted_at_helper' => '',
+        ],
+    ],
+    'Measurement'       => [
+        'title'          => ' المقاييس ',
+        'title_singular' => ' مقياس ',
         'fields'         => [
             'id'                => ' المعرف ',
             'id_helper'         => '',

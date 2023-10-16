@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\StoreTestRequest;
 use App\Option;
+use App\Measurement;
 
 class TestsController extends Controller
 {
-    public function index()
+    public function select_Measurement( )
     {
+        return view('client.select_Measurement');
+        
+    }
+    public function index($Measurement_id)
+    {
+       $Measurement= Measurement::where('id',$Measurement_id)->first();
         $categories = Category::with(['categoryQuestions' => function ($query) {
                 $query->inRandomOrder()
                     ->with(['questionOptions' => function ($query) {
@@ -19,10 +26,10 @@ class TestsController extends Controller
             ->whereHas('categoryQuestions')
             ->get();
 
-        return view('client.test', compact('categories'));
+        return view('client.test', compact('categories','Measurement'));
     }
 
-    public function store(StoreTestRequest $request)
+    public function store(StoreTestRequest $request,$Measurement_id)
     {
         $options = Option::find(array_values($request->input('questions')));
 
@@ -30,13 +37,18 @@ class TestsController extends Controller
             'total_points' => $options->sum('points')
         ]);
 
-        $questions = $options->mapWithKeys(function ($option) {
+         $result->Measurement_id=$Measurement_id;
+         $result->save();
+
+         $questions = $options->mapWithKeys(function ($option) 
+        {
             return [$option->question_id => [
                         'option_id' => $option->id,
                         'points' => $option->points
                     ]
                 ];
-            })->toArray();
+        }
+    )->toArray();
 
         $result->questions()->sync($questions);
 

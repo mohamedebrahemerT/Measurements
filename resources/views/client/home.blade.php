@@ -20,6 +20,8 @@
                         </div>
                     @endif
 {{ trans('panel.You are logged in!') }}
+<br>
+ <img src="{{url('/')}}/images/logo.png">
                     
                 </div>
             </div>

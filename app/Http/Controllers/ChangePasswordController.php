@@ -27,9 +27,15 @@ class ChangePasswordController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        auth()->user()->update(['password' => $request->input('password')]);
+        auth()->user()->update(
+            [
+                
+                'age' => $request->input('age'),
+                'dateOfbrith' => $request->input('dateOfbrith'),
+                'relation' => $request->input('relation'),
+        ]);
 
-        return redirect()->back()->withStatus('Password changed successfully.');
+        return redirect()->back()->withStatus(' تم  التحديث بنجاح ');
     }
 
     /**
@@ -41,7 +47,9 @@ class ChangePasswordController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'age' => 'required',
+            'dateOfbrith' => 'required',
+            'relation' => 'required',
         ]);
     }
 }

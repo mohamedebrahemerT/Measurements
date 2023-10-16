@@ -7,8 +7,12 @@ Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('dashboard', 'HomeController@index')->name('home');
     Route::get('change-password', 'ChangePasswordController@create')->name('password.create');
     Route::post('change-password', 'ChangePasswordController@update')->name('password.update');
-    Route::get('test', 'TestsController@index')->name('test');
-    Route::post('test', 'TestsController@store')->name('test.store');
+    Route::get('select_Measurement', 'TestsController@select_Measurement')->name('select_Measurement');
+    
+    Route::get('test/{Measurement_id}', 'TestsController@index')->name('test');
+
+
+    Route::post('test/{Measurement_id}', 'TestsController@store')->name('test.store');
     Route::get('results/{result_id}', 'ResultsController@show')->name('results.show');
     Route::get('send/{result_id}', 'ResultsController@send')->name('results.send');
 });
@@ -29,6 +33,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Users
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
+
+   
+ // Measurement
+    Route::delete('Measurement/destroy', 'MeasurementController@massDestroy')->name('Measurement.massDestroy');
+    Route::resource('Measurement', 'MeasurementController');
+
 
     // Categories
     Route::delete('categories/destroy', 'CategoriesController@massDestroy')->name('categories.massDestroy');

@@ -10,6 +10,33 @@
         <form method="POST" action="{{ route("admin.categories.update", [$category->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
+
+               <div class="form-group">
+        <label class="control-label">
+ {{ trans('cruds.category.Measurement_id') }}
+         </label>
+
+                <select name="Measurement_id" class="form-control select2">
+                    @foreach(App\Measurement::get() as $Measurement)
+                    <option 
+ 
+  @if ($category->Measurement_id == $Measurement->id)
+              selected
+              @endif
+                    value="{{$Measurement->id}}">
+                      
+                               {{$Measurement->name}} 
+                               
+                                 
+                    </option>
+
+
+                    @endforeach
+                    
+                </select>
+            </div>
+
+
             <div class="form-group">
                 <label class="required" for="name">{{ trans('cruds.category.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required>

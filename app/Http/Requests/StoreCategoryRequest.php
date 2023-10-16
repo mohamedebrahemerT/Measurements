@@ -22,6 +22,9 @@ class StoreCategoryRequest extends FormRequest
             'name' => [
                 'required',
             ],
+             'Measurement_id' => [
+                'required',
+            ],
         ];
     }
 }

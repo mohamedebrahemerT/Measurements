@@ -40,6 +40,42 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span>
             </div>
+
+            <div class="form-group">
+                <label class="required" for="age"> العمر </label>
+                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="age" id="age" value="{{ old('age', $user->age) }}" required>
+                @if($errors->has('age'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('age') }}
+                    </div>
+                @endif
+                <span class="help-block">العمر</span>
+            </div>
+
+               <div class="form-group">
+                <label class="required" for="dateOfbrith">  تاريخ اميلاد  </label>
+                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="date" name="dateOfbrith" id="dateOfbrith" value="{{ old('dateOfbrith', $user->dateOfbrith) }}" required>
+                @if($errors->has('dateOfbrith'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('dateOfbrith') }}
+                    </div>
+                @endif
+                <span class="help-block"> تاريخ اميلاد </span>
+            </div>
+
+
+             <div class="form-group">
+                <label class="required" for="relation">   العلاقة  </label>
+                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="relation" id="relation" value="{{ old('relation', $user->relation) }}" required>
+                @if($errors->has('relation'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('relation') }}
+                    </div>
+                @endif
+                <span class="help-block">  العلاقة </span>
+            </div>
+
+
             <div class="form-group">
                 <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
                 <div style="padding-bottom: 4px">

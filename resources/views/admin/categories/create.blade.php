@@ -9,8 +9,35 @@
     <div class="card-body">
         <form method="POST" action="{{ route("admin.categories.store") }}" enctype="multipart/form-data">
             @csrf
+
+              <div class="form-group">
+        <label class="control-label">
+ {{ trans('cruds.category.Measurement_id') }}
+         </label>
+
+                <select name="Measurement_id" class="form-control select2">
+                    @foreach(App\Measurement::get() as $Measurement)
+                    <option 
+ 
+  @if (old('Measurement_id') == $Measurement->id)
+              selected
+              @endif
+                    value="{{$Measurement->id}}">
+                      
+                               {{$Measurement->name}} 
+                               
+                                 
+                    </option>
+
+
+                    @endforeach
+                    
+                </select>
+            </div>
+
+
             <div class="form-group">
-                <label class="required" for="name">{{ trans('cruds.category.fields.name') }}</label>
+       <label class="required" for="name">{{ trans('cruds.category.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', '') }}" required>
                 @if($errors->has('name'))
                     <div class="invalid-feedback">

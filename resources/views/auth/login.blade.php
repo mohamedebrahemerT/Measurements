@@ -4,7 +4,8 @@
     <div class="col-md-6">
         <div class="card mx-4">
             <div class="card-body p-4">
-                <h1>{{ trans('panel.site_title') }}</h1>
+                <img src="{{url('/')}}/images/logo.png">
+                <h1  >{{ trans('panel.site_title') }}</h1>
 
                 <p class="text-muted">{{ trans('global.login') }}</p>
 

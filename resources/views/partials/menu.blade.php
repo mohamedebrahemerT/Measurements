@@ -52,6 +52,18 @@
                     </ul>
                 </li>
             @endcan
+
+             @can('Measurement_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.Measurement.index") }}" class="nav-link {{ request()->is('admin/Measurement') || request()->is('admin/Measurement/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-list nav-icon">
+
+                        </i>
+                        {{ trans('cruds.Measurement.title') }}
+                    </a>
+                </li>
+            @endcan
+            
             @can('category_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.categories.index") }}" class="nav-link {{ request()->is('admin/categories') || request()->is('admin/categories/*') ? 'active' : '' }}">
@@ -62,6 +74,8 @@
                     </a>
                 </li>
             @endcan
+
+
             @can('question_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.questions.index") }}" class="nav-link {{ request()->is('admin/questions') || request()->is('admin/questions/*') ? 'active' : '' }}">

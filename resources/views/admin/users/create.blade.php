@@ -39,6 +39,41 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span>
             </div>
+
+            <div class="form-group">
+                <label class="required" for="age"> العمر </label>
+                <input class="form-control {{ $errors->has('age') ? 'is-invalid' : '' }}" type="text" name="age" id="name" value="{{ old('age', '') }}" required>
+                @if($errors->has('age'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('age') }}
+                    </div>
+                @endif
+                <span class="help-block">العمر</span>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="dateOfbrith">تاريخ  اميلاد     </label>
+                <input class="form-control {{ $errors->has('dateOfbrith') ? 'is-invalid' : '' }}" type="date" name="dateOfbrith" id="name" value="{{ old('dateOfbrith', '') }}" required>
+                @if($errors->has('dateOfbrith'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('dateOfbrith') }}
+                    </div>
+                @endif
+                <span class="help-block"> تاريخ  اميلاد  </span>
+            </div>
+
+              <div class="form-group">
+                <label class="required" for="relation"> العلاقة </label>
+                <input class="form-control {{ $errors->has('relation') ? 'is-invalid' : '' }}" type="text" name="relation" id="name" value="{{ old('relation', '') }}" required>
+                @if($errors->has('relation'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('relation') }}
+                    </div>
+                @endif
+                <span class="help-block">     العلاقة  </span>
+            </div>
+
+
             <div class="form-group">
                 <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
                 <div style="padding-bottom: 4px">

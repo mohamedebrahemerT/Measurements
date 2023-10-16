@@ -23,12 +23,20 @@ class Result extends Model
         'updated_at',
         'deleted_at',
         'total_points',
+        'Measurement_id'
     ];
 
-    public function user()
+    public function Measure()
+    {
+        return $this->belongsTo(Measurement::class, 'Measurement_id');
+    }
+
+      public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+
 
     public function questions()
     {
