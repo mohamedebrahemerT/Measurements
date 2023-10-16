@@ -17,7 +17,8 @@ class TestsController extends Controller
     public function index($Measurement_id)
     {
        $Measurement= Measurement::where('id',$Measurement_id)->first();
-        $categories = Category::with(['categoryQuestions' => function ($query) {
+
+        $categories = Category::where('Measurement_id',$Measurement_id)->with(['categoryQuestions' => function ($query) {
                 $query->inRandomOrder()
                     ->with(['questionOptions' => function ($query) {
                         $query->inRandomOrder();
