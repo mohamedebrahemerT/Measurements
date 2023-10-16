@@ -81,10 +81,14 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
                    
             </div>
         </div>
-         <a class="btn btn-primary" onclick="printDiv2('printttt')"> 
+
+        <div class="col-12">
+             <a class="btn btn-primary" onclick="printDiv2('printttt')"> 
    طباعه 
                                         <i class="fa fa-print"></i>
                                     </a >  
+        </div>
+
     </div>
 </div>
 @endsection
