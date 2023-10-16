@@ -78,12 +78,13 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
 
 
-                    <a class="btn btn-primary" onclick="printDiv2('printttt')"> 
+                   
+            </div>
+        </div>
+         <a class="btn btn-primary" onclick="printDiv2('printttt')"> 
    طباعه 
                                         <i class="fa fa-print"></i>
                                     </a >  
-            </div>
-        </div>
     </div>
 </div>
 @endsection
