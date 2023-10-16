@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" id="printttt">
+            <div class="card" id="printttt" style="text-align: center;border: 5px solid rgba(0,0,0,.125);">
                 <div class="card-header">  {{ trans('panel.Results of your test') }} :{{ $result->Measure->name }}</div>
 
                 <div class="card-body">
