@@ -23,6 +23,7 @@ class Question extends Model
         'deleted_at',
         'category_id',
         'question_text',
+        'question_treatment'
     ];
 
     public function questionOptions()

@@ -72,6 +72,19 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
     <p>   {{$Category->name}} :  {{$Categoryresult}} درجة</p>
               @endforeach
 ............................................................................................
+
+ @foreach(App\question_result::where('result_id',$result->id)->get() as $Question)
+      
+       @php
+      $Question= App\Question::where('id',$Question->question_id)->first();
+       @endphp
+
+      <p>  {{$Question->question_text}}  ?</p>
+      <p>  {{$Question->question_treatment}} </p>
+              
+              @endforeach
+
+............................................................................................
              
 
                 </div>

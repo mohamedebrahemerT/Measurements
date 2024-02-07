@@ -250,4 +250,7 @@ return [
     'no_alerts'                            => 'No alerts',
     'calendar'                             => 'Calendar',
     'messenger'                            => 'Messenger',
+    'age'                            => ' العمر  ',
+    'dateOfbrith'                            => '  تاريخ  الميلاد   ',
+    'relation'                            => '     العلاقة  ',
 ];

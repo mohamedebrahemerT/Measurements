@@ -23,6 +23,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.question.fields.category_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label class="required" for="question_text">{{ trans('cruds.question.fields.question_text') }}</label>
                 <textarea class="form-control {{ $errors->has('question_text') ? 'is-invalid' : '' }}" name="question_text" id="question_text" required>{{ old('question_text') }}</textarea>
@@ -33,6 +34,18 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.question.fields.question_text_helper') }}</span>
             </div>
+
+             <div class="form-group">
+                <label class="required" for="question_treatment">{{ trans('cruds.question.fields.question_treatment') }}</label>
+                <textarea class="form-control {{ $errors->has('question_treatment') ? 'is-invalid' : '' }}" name="question_treatment" id="question_treatment" required>{{ old('question_treatment') }}</textarea>
+                @if($errors->has('question_treatment'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('question_treatment') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.question.fields.question_treatment_helper') }}</span>
+            </div>
+
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

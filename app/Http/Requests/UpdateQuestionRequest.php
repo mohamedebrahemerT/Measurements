@@ -26,6 +26,9 @@ class UpdateQuestionRequest extends FormRequest
             'question_text' => [
                 'required',
             ],
+            'question_treatment' => [
+                'required',
+            ],
         ];
     }
 }
