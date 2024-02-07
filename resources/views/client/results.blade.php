@@ -39,6 +39,9 @@
          التوقيع :................. <br>
 
 ..................................................................
+@php
+$Total=0;
+@endphp
   @foreach(App\Category::where('Measurement_id',$result->Measurement_id)->get() as $Category)
       @php
       $Questionid=[];
@@ -47,7 +50,7 @@
          array_push($Questionid, $Question->id);
        }
 
-$Total=App\Option::whereIn('question_id',$Questionid)->sum('points');
+$Total=$Total + App\Option::whereIn('question_id',$Questionid)->sum('points');
       @endphp
 
   
@@ -68,12 +71,20 @@ $Total=App\Option::whereIn('question_id',$Questionid)->sum('points');
        }
 
 $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('question_id',$Questionid)->sum('points');
+
+ $totfromcat=App\Option::whereIn('question_id',$Questionid)->sum('points');
       @endphp
-    <p>   {{$Category->name}} :  {{$Categoryresult}} درجة</p>
+
+    <p>  الفئة  : {{$Category->name}} :  {{$Categoryresult}} درجة   /من   {{$totfromcat}} درجة</p>
+
+
               @endforeach
 ............................................................................................
 
- @foreach(App\question_result::where('result_id',$result->id)->get() as $Question)
+ @foreach(App\question_result::
+ where('points','>','0')->
+ where('result_id',$result->id)
+ ->get() as $Question)
       
        @php
       $Question= App\Question::where('id',$Question->question_id)->first();
