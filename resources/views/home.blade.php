@@ -16,6 +16,8 @@
                         </div>
                     @endif
             {{ trans('panel.You are logged in!') }}
+
+            
                     
                 </div>
             </div>
