@@ -43,6 +43,7 @@ class User extends Authenticatable
         'age',
         'dateOfbrith',
         'relation',
+        'phone'
 
     ];
 

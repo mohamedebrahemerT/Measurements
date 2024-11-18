@@ -25,7 +25,7 @@ return [
     'month'                                => 'شهر',
     'no'                                   => 'لا',
     'pleaseSelect'                         => 'الرجاء التحديد',
-    'register'                             => 'تسجيل ',
+    'register'                             => ' تسجيل حساب  جديد   ',
     'remember_me'                          => 'تذكرنى',
     'reset_password'                       => 'إعادة تعيين كلمة المرور',
     'send_password'                        => 'إرسال رابط إعادة تعيين كلمة السر',
@@ -253,4 +253,5 @@ return [
     'age'                            => ' العمر  ',
     'dateOfbrith'                            => '  تاريخ  الميلاد   ',
     'relation'                            => '     العلاقة  ',
+    'phone'=>'الجوال  ',
 ];
