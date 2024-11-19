@@ -174,15 +174,15 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
         @if($Category->name == 'التخاطب والتواصل')
 
-          @if($Categoryresult >= 0 and  $Categoryresult <= 2)
+          @if($Categoryresult >= 0 and  $Categoryresult <= 3)
            ضعيف    
           @endif
 
-          @if($Categoryresult > 2 and  $Categoryresult <= 4)
+          @if($Categoryresult >= 4 and  $Categoryresult <= 7)
                متوسط  
           @endif
 
-           @if($Categoryresult >= 5 and  $Categoryresult <= 9)
+           @if($Categoryresult > 7 and  $Categoryresult <= 12)
               مرتفع   
           @endif
 
