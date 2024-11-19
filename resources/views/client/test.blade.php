@@ -33,7 +33,7 @@
                        @foreach($category->categoryQuestions as $keysub => $question)
                                         <div class="card @if(!$loop->last)mb-3 @endif">
                                             <div class="card-header"  >
-                         {{$keysub + 1}}- {{ $question->question_text }}</div>
+                         {{-- $key+ 1 --}} {{ $question->question_text }}</div>
                         
                                             <div class="card-body">
         <input type="hidden" name="questions[{{ $question->id }}]" value="">
