@@ -30,7 +30,8 @@
     </tr>
   </thead>
   <tbody>
-                  @foreach(App\Measurement::get() as $key => $Measurement)
+     @foreach(App\Measurement::
+                  where('status','1')->get() as $key => $Measurement)
 
     <tr>
       <td>{{$key + 1}}</td>
