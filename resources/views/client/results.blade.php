@@ -65,7 +65,7 @@ $Total=$Total + App\Option::whereIn('question_id',$Questionid)->sum('points');
 
     <table class="table">
   <thead>
-    <tr>
+    <tr style="background-color: #e5eff7;">
       
       <th scope="col"> الفئة </th>
       <th scope="col"> اجمالي  الدرجة  </th>
