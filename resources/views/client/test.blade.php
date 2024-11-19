@@ -25,9 +25,9 @@
           
                         @foreach($categories as $key => $category)
                             <div class="card mb-3">
-                        <div class="card-header" style="color: #4b4ff0;">
+                        <!--div class="card-header" style="color: #4b4ff0;">
                                   {{$key+ 1}}-  {{ $category->name }}
-                                </div>
+                                </div -->
                 
                                 <div class="card-body">
                        @foreach($category->categoryQuestions as $key => $question)
