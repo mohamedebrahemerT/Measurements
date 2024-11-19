@@ -104,11 +104,11 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
           @if($Category->name == 'القلق والتوتر')
 
-          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          @if($Categoryresult >= 1 and  $Categoryresult < 10)
           متوسط  
           @endif
 
-          @if($Categoryresult > 10 and  $Categoryresult < 15)
+          @if($Categoryresult >= 10 and  $Categoryresult < 15)
            مرتفع   
           @endif
 
@@ -118,11 +118,11 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
        @if($Category->name == '-التفاعل الاجتماعي')
 
-          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          @if($Categoryresult >= 1 and  $Categoryresult < 10)
           متوسط  
           @endif
 
-          @if($Categoryresult > 10 and  $Categoryresult < 15)
+          @if($Categoryresult >= 10 and  $Categoryresult < 15)
            مرتفع   
           @endif
 
@@ -131,11 +131,11 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
         @if($Category->name == 'الواسوس القهرى')
 
-          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          @if($Categoryresult >= 1 and  $Categoryresult < 10)
           متوسط  
           @endif
 
-          @if($Categoryresult > 10 and  $Categoryresult < 15)
+          @if($Categoryresult >= 10 and  $Categoryresult < 15)
            مرتفع   
           @endif
 
@@ -144,11 +144,11 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
         @if($Category->name == 'التركيز والانتباه')
 
-          @if($Categoryresult > 1 and  $Categoryresult < 3)
+          @if($Categoryresult >= 1 and  $Categoryresult < 3)
           متوسط  
           @endif
 
-          @if($Categoryresult > 4 and  $Categoryresult < 6)
+          @if($Categoryresult >= 4 and  $Categoryresult < 6)
            مرتفع   
           @endif
 
@@ -157,11 +157,11 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
          @if($Category->name == 'التخاطب والتواصل')
 
-          @if($Categoryresult > 1 and  $Categoryresult < 4)
+          @if($Categoryresult >= 1 and  $Categoryresult < 4)
           متوسط  
           @endif
 
-          @if($Categoryresult > 5 and  $Categoryresult < 9)
+          @if($Categoryresult >= 5 and  $Categoryresult < 9)
            مرتفع   
           @endif
 
