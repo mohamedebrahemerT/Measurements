@@ -81,7 +81,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
               @endforeach
 ............................................................................................
 
- @foreach(App\question_result::
+{{-- @foreach(App\question_result::
  where('points','>','0')->
  where('result_id',$result->id)
  ->get() as $Question)
@@ -93,7 +93,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
       <p>  {{$Question->question_text}}  ?</p>
       <p>  {{$Question->question_treatment}} </p>
               
-              @endforeach
+              @endforeach --}}
 
 ............................................................................................
              
