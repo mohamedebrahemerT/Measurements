@@ -68,7 +68,7 @@ $Total=$Total + App\Option::whereIn('question_id',$Questionid)->sum('points');
     <tr style="background-color: #e5eff7;">
       
       <th scope="col"> الفئة </th>
-      <th scope="col"> اجمالي  الدرجة  </th>
+      <!--th scope="col"> اجمالي  الدرجة  </th-->
         <th scope="col"> الدرجة  </th>
       <th scope="col"> التصنيف   </th>
     </tr>
@@ -93,10 +93,82 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
 
     <tr>
-      <th scope="row">{{$Category->name}}</th>
-      <td>{{$totfromcat}}</td>
-       <td> {{$Categoryresult}} </td>
-      <td> ....</td>
+      <th >{{$Category->name}}</th>
+      <!--td>{{$totfromcat}}</td -->
+       <td> 
+
+
+       {{$Categoryresult}}
+        </td>
+      <td>
+
+          @if($Category->name == 'القلق والتوتر')
+
+          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          متوسط  
+          @endif
+
+          @if($Categoryresult > 10 and  $Categoryresult < 15)
+           مرتفع   
+          @endif
+
+        @endif
+
+
+
+       @if($Category->name == '-التفاعل الاجتماعي')
+
+          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          متوسط  
+          @endif
+
+          @if($Categoryresult > 10 and  $Categoryresult < 15)
+           مرتفع   
+          @endif
+
+        @endif
+
+
+        @if($Category->name == 'الواسوس القهرى')
+
+          @if($Categoryresult > 1 and  $Categoryresult < 10)
+          متوسط  
+          @endif
+
+          @if($Categoryresult > 10 and  $Categoryresult < 15)
+           مرتفع   
+          @endif
+
+        @endif
+
+
+        @if($Category->name == 'التركيز والانتباه')
+
+          @if($Categoryresult > 1 and  $Categoryresult < 3)
+          متوسط  
+          @endif
+
+          @if($Categoryresult > 4 and  $Categoryresult < 6)
+           مرتفع   
+          @endif
+
+        @endif
+
+
+         @if($Category->name == 'التخاطب والتواصل')
+
+          @if($Categoryresult > 1 and  $Categoryresult < 4)
+          متوسط  
+          @endif
+
+          @if($Categoryresult > 5 and  $Categoryresult < 9)
+           مرتفع   
+          @endif
+
+        @endif
+
+
+      </td>
        
     </tr>
   
