@@ -104,68 +104,90 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
           @if($Category->name == 'القلق والتوتر')
 
-          @if($Categoryresult >= 1 and  $Categoryresult <= 10)
-          متوسط  
+          @if($Categoryresult >= 1 and  $Categoryresult <= 5)
+           ضعيف    
           @endif
 
-          @if($Categoryresult >= 10 and  $Categoryresult <= 15)
-           مرتفع   
+          @if($Categoryresult > 5 and  $Categoryresult <= 10)
+               متوسط  
           @endif
 
-        @endif
-
-
-
-       @if($Category->name == '-التفاعل الاجتماعي')
-
-          @if($Categoryresult >= 1 and  $Categoryresult <= 10)
-          متوسط  
-          @endif
-
-          @if($Categoryresult >= 10 and  $Categoryresult <= 15)
-           مرتفع   
+           @if($Categoryresult > 10 and  $Categoryresult <= 15)
+              مرتفع   
           @endif
 
         @endif
+
 
 
         @if($Category->name == 'الواسوس القهرى')
 
-          @if($Categoryresult >= 1 and  $Categoryresult <= 10)
-          متوسط  
+          @if($Categoryresult >= 1 and  $Categoryresult <= 5)
+           ضعيف    
           @endif
 
-          @if($Categoryresult >= 10 and  $Categoryresult <= 15)
-           مرتفع   
+          @if($Categoryresult > 5 and  $Categoryresult <= 10)
+               متوسط  
+          @endif
+
+           @if($Categoryresult > 10 and  $Categoryresult <= 15)
+              مرتفع   
+          @endif
+
+        @endif
+
+    
+
+      @if($Category->name == '-التفاعل الاجتماعي')
+
+          @if($Categoryresult >= 1 and  $Categoryresult <= 5)
+           ضعيف    
+          @endif
+
+          @if($Categoryresult > 5 and  $Categoryresult <= 10)
+               متوسط  
+          @endif
+
+           @if($Categoryresult > 10 and  $Categoryresult <= 15)
+              مرتفع   
           @endif
 
         @endif
 
 
-        @if($Category->name == 'التركيز والانتباه')
+         @if($Category->name == 'التركيز والانتباه')
 
-          @if($Categoryresult >= 1 and  $Categoryresult <= 3)
-          متوسط  
+          @if($Categoryresult >= 0 and  $Categoryresult <= 1)
+           ضعيف    
           @endif
 
-          @if($Categoryresult >= 4 and  $Categoryresult <= 6)
-           مرتفع   
+          @if($Categoryresult >= 2 and  $Categoryresult <= 3)
+               متوسط  
+          @endif
+
+           @if($Categoryresult >= 4 and  $Categoryresult <= 6)
+              مرتفع   
+          @endif
+
+        @endif
+
+
+        @if($Category->name == 'التخاطب والتواصل')
+
+          @if($Categoryresult >= 0 and  $Categoryresult <= 2)
+           ضعيف    
+          @endif
+
+          @if($Categoryresult > 2 and  $Categoryresult <= 4)
+               متوسط  
+          @endif
+
+           @if($Categoryresult >= 5 and  $Categoryresult <= 9)
+              مرتفع   
           @endif
 
         @endif
 
-
-         @if($Category->name == 'التخاطب والتواصل')
-
-          @if($Categoryresult >= 1 and  $Categoryresult <= 4)
-          متوسط  
-          @endif
-
-          @if($Categoryresult >= 5 and  $Categoryresult <= 9)
-           مرتفع   
-          @endif
-
-        @endif
 
 
       </td>
