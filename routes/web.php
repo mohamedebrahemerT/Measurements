@@ -7,6 +7,7 @@ Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('dashboard', 'HomeController@index')->name('home');
     Route::get('change-password', 'ChangePasswordController@create')->name('password.create');
     Route::post('change-password', 'ChangePasswordController@update')->name('password.update');
+    
     Route::get('select_Measurement', 'TestsController@select_Measurement')->name('select_Measurement');
     
     Route::get('test/{Measurement_id}', 'TestsController@index')->name('test');
