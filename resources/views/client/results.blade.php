@@ -62,6 +62,20 @@ $Total=$Total + App\Option::whereIn('question_id',$Questionid)->sum('points');
 
       <p>ملخص  الدرجات : {{ $result->total_points }}درجة</p>
 
+
+    <table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col"> الفئة </th>
+      <th scope="col"> اجمالي  الدرجة  </th>
+        <th scope="col"> الدرجة  </th>
+      <th scope="col"> التصنيف   </th>
+    </tr>
+  </thead>
+  <tbody>
+     
+
       @foreach(App\Category::where('Measurement_id',$result->Measurement_id)->get() as $Category)
       @php
       $Questionid=[];
@@ -75,11 +89,24 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
  $totfromcat=App\Option::whereIn('question_id',$Questionid)->sum('points');
       @endphp
 
-    <p>  الفئة  : {{$Category->name}} :  {{$Categoryresult}} درجة   /من   {{$totfromcat}} درجة</p>
+    <!--p>  الفئة  : {{$Category->name}} :  {{$Categoryresult}} درجة   /من   {{$totfromcat}} درجة</p -->
+
+
+    <tr>
+      <th scope="row">{{$Category->name}}</th>
+      <td>{{$totfromcat}}</td>
+       <td> {{$Categoryresult}} </td>
+      <td> ....</td>
+       
+    </tr>
+  
 
 
               @endforeach
-............................................................................................
+
+  </tbody>
+</table>
+ 
 
 {{-- @foreach(App\question_result::
  where('points','>','0')->
@@ -95,8 +122,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
               
               @endforeach --}}
 
-............................................................................................
-             
+ 
 
                 </div>
 

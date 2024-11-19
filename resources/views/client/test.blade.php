@@ -25,19 +25,19 @@
           
                         @foreach($categories as $key => $category)
                             <div class="card mb-3">
-                                <div class="card-header" style="color: #4b4ff0;">
+                        <div class="card-header" style="color: #4b4ff0;">
                                   {{$key+ 1}}-  {{ $category->name }}
                                 </div>
                 
                                 <div class="card-body">
                        @foreach($category->categoryQuestions as $key => $question)
                                         <div class="card @if(!$loop->last)mb-3 @endif">
-                                            <div class="card-header">
+                                            <div class="card-header"  >
                          {{$key+ 1}}- {{ $question->question_text }}</div>
                         
                                             <div class="card-body">
         <input type="hidden" name="questions[{{ $question->id }}]" value="">
-                                                @foreach($question->questionOptions as $option)
+                  @foreach($question->questionOptions as $option)
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="questions[{{ $question->id }}]" id="option-{{ $option->id }}" value="{{ $option->id }}"@if(old("questions.$question->id") == $option->id) checked @endif>
                                                         <label class="form-check-label" for="option-{{ $option->id }}">
