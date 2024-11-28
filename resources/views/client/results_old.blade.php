@@ -68,7 +68,7 @@ $Total=$Total + App\Option::whereIn('question_id',$Questionid)->sum('points');
     <tr style="background-color: rgb(142, 180, 211);">
       
       <th scope="col"> الفئة </th>
-      <th scope="col"> اجمالي  الدرجة  </th>
+      <!--th scope="col"> اجمالي  الدرجة  </th-->
         <th scope="col"> الدرجة  </th>
       <th scope="col"> التصنيف   </th>
     </tr>
@@ -94,7 +94,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 
     <tr>
       <th >{{$Category->name}}</th>
-      <td>{{$totfromcat}}</td >
+      <!--td>{{$totfromcat}}</td -->
        <td> 
 
 
@@ -202,7 +202,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
 </table>
  
 
-  @foreach(App\question_result::
+{{-- @foreach(App\question_result::
  where('points','>','0')->
  where('result_id',$result->id)
  ->get() as $Question)
@@ -214,7 +214,7 @@ $Categoryresult=App\question_result::where('result_id',$result->id)->whereIn('qu
       <p>  {{$Question->question_text}}  ?</p>
       <p>  {{$Question->question_treatment}} </p>
               
-              @endforeach  
+              @endforeach --}}
 
  
 
